@@ -12,9 +12,13 @@
 		7D18C92821E4DF360039FA87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C92621E4DF360039FA87 /* Main.storyboard */; };
 		7D18C92A21E4DF390039FA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C92921E4DF390039FA87 /* Assets.xcassets */; };
 		7D18C92D21E4DF390039FA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C92B21E4DF390039FA87 /* LaunchScreen.storyboard */; };
+		FCD0A2CBE73B338788FFF72C /* Pods_rentCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262271B64FC2508D8920E342 /* Pods-rentCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-rentCar/Pods-rentCar.release.xcconfig"; sourceTree = "<group>"; };
+		4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rentCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72DC198F94D1AD909F0B75AD /* Pods-rentCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rentCar/Pods-rentCar.debug.xcconfig"; sourceTree = "<group>"; };
 		7D18C91F21E4DF360039FA87 /* rentCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rentCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D18C92221E4DF360039FA87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D18C92421E4DF360039FA87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD0A2CBE73B338788FFF72C /* Pods_rentCar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EF03D125948682E48A045B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72DC198F94D1AD909F0B75AD /* Pods-rentCar.debug.xcconfig */,
+				262271B64FC2508D8920E342 /* Pods-rentCar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7D18C91621E4DF360039FA87 = {
 			isa = PBXGroup;
 			children = (
 				7D18C92121E4DF360039FA87 /* rentCar */,
 				7D18C92021E4DF360039FA87 /* Products */,
+				1EF03D125948682E48A045B1 /* Pods */,
+				C90CCC7754B0A9CC6AB1E2F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = rentCar;
 			sourceTree = "<group>";
 		};
+		C90CCC7754B0A9CC6AB1E2F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D18C93121E4DF390039FA87 /* Build configuration list for PBXNativeTarget "rentCar" */;
 			buildPhases = (
+				0B2453102CED7286CEC39235 /* [CP] Check Pods Manifest.lock */,
 				7D18C91B21E4DF360039FA87 /* Sources */,
 				7D18C91C21E4DF360039FA87 /* Frameworks */,
 				7D18C91D21E4DF360039FA87 /* Resources */,
+				FE335B39311BA461169C2210 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B2453102CED7286CEC39235 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rentCar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE335B39311BA461169C2210 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rentCar/Pods-rentCar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rentCar/Pods-rentCar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D18C91B21E4DF360039FA87 /* Sources */ = {
@@ -280,6 +351,7 @@
 		};
 		7D18C93221E4DF390039FA87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72DC198F94D1AD909F0B75AD /* Pods-rentCar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +370,7 @@
 		};
 		7D18C93321E4DF390039FA87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262271B64FC2508D8920E342 /* Pods-rentCar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
