@@ -10,6 +10,11 @@
 		7D18C92321E4DF360039FA87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C92221E4DF360039FA87 /* AppDelegate.swift */; };
 		7D18C92521E4DF360039FA87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C92421E4DF360039FA87 /* HomeViewController.swift */; };
 		7D18C92D21E4DF390039FA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C92B21E4DF390039FA87 /* LaunchScreen.storyboard */; };
+		7D5C0CBA21EC21670052A6E7 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CB921EC21670052A6E7 /* ListHeader.swift */; };
+		7D5C0CBC21EC3ED20052A6E7 /* CellCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */; };
+		7D5C0CBE21EC5D520052A6E7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */; };
+		7D5C0CC021EC5FD50052A6E7 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */; };
+		7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */; };
 		7DD133DA21E77BD20020E344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD133D921E77BD20020E344 /* Assets.xcassets */; };
 		7DD133DD21E784800020E344 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DC21E784800020E344 /* CommonUI.swift */; };
 		7DD133E421E784DF0020E344 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DF21E784DE0020E344 /* UIImage.swift */; };
@@ -37,6 +42,11 @@
 		7D18C92421E4DF360039FA87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7D18C92C21E4DF390039FA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D18C92E21E4DF390039FA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5C0CB921EC21670052A6E7 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
+		7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCar.swift; sourceTree = "<group>"; };
+		7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
+		7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
 		7DD133D921E77BD20020E344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD133DC21E784800020E344 /* CommonUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		7DD133DF21E784DE0020E344 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 				7DD133DF21E784DE0020E344 /* UIImage.swift */,
 				7DD133E121E784DE0020E344 /* UIView.swift */,
 				7DD133E221E784DF0020E344 /* UserDefaults.swift */,
+				7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +157,8 @@
 		7DD133F221E786120020E344 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */,
+				7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				7DD133F821E7895A0020E344 /* Footer.swift */,
+				7D5C0CB921EC21670052A6E7 /* ListHeader.swift */,
+				7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -318,19 +333,24 @@
 			files = (
 				7DD133F721E7881A0020E344 /* BaseViewController.swift in Sources */,
 				7D18C92521E4DF360039FA87 /* HomeViewController.swift in Sources */,
+				7D5C0CBA21EC21670052A6E7 /* ListHeader.swift in Sources */,
 				7DD133E421E784DF0020E344 /* UIImage.swift in Sources */,
 				7DD133F021E785400020E344 /* CommonUtil.swift in Sources */,
 				7DD133F921E7895A0020E344 /* Footer.swift in Sources */,
 				7D18C92321E4DF360039FA87 /* AppDelegate.swift in Sources */,
+				7D5C0CBE21EC5D520052A6E7 /* UILabel.swift in Sources */,
 				7DD133FB21E78F310020E344 /* GlobalConstant.swift in Sources */,
+				7D5C0CBC21EC3ED20052A6E7 /* CellCar.swift in Sources */,
 				7DD133EF21E785400020E344 /* FileUtil.swift in Sources */,
 				7DD133ED21E785400020E344 /* Conversion.swift in Sources */,
 				7DD133DD21E784800020E344 /* CommonUI.swift in Sources */,
 				7DD133E621E784DF0020E344 /* UIView.swift in Sources */,
+				7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */,
 				7DD133FD21E870FA0020E344 /* MineViewController.swift in Sources */,
 				7DD133E821E784DF0020E344 /* UIColor.swift in Sources */,
 				7DD133EE21E785400020E344 /* NSLog.swift in Sources */,
 				7DD133E721E784DF0020E344 /* UserDefaults.swift in Sources */,
+				7D5C0CC021EC5FD50052A6E7 /* CarInfo.swift in Sources */,
 				7DD133E521E784DF0020E344 /* CALayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,9 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
+let horizontalMargin: CGFloat = 24
+let padding : CGFloat = 8
+
 /// 获取系统字体
 ///
 /// - Parameter size: 字体大小
@@ -99,6 +102,10 @@ func getStrWidth(labelStr: String, font: UIFont, height: CGFloat) -> CGFloat {
     return strSize.width
 }
 
+func getLabelWidth(_ label: UILabel, _ height: CGFloat) -> CGFloat {
+    return getStrWidth(labelStr: label.text!, font: label.font, height: height)
+}
+
 /// 获取label的高度
 /// Label的lineBreakMode = .byCharWrapping
 /// numberOfLines = 0
@@ -115,6 +122,10 @@ func getStrHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
     
     NSLog.i("getStrHeight = \(strSize.height)")
     return strSize.height
+}
+
+func getLabelHeight(_ label: UILabel, _ width: CGFloat) -> CGFloat {
+    return getStrHeight(labelStr: label.text!, font: label.font, width: width)
 }
 
 /// 获取Label宽度

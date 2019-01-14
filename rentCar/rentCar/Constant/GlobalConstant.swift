@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 // 强制输出log
 let FORCE_LOG = true
+
+// 图片长宽比例
+let IMG_WIDTH: CGFloat = 16
+let IMG_HEIGHT: CGFloat = 9

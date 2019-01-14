@@ -37,8 +37,9 @@ extension UIColor {
     static let YELLOW_LIGHT = withHex(hexString: "#FFFFE0")
     
     // 绿
-    static let GREEN        = withHex(hexString: "#008000")
-    static let GREEN_LIGHT  = withHex(hexString: "#98FB98")
+    static let GREEN        = withHex(hexString: "#2E8B57")
+    static let GREEN_LIGHT  = withHex(hexString: "#41CFBE")
+    static let GREEN_LIGHT_BG  = withHex(hexString: "#E5F2F2")
     
     // 青
     static let CYAN         = withHex(hexString: "#00FFFF")

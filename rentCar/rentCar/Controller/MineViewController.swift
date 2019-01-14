@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MineViewController: BaseViewController {
 
@@ -19,6 +20,14 @@ class MineViewController: BaseViewController {
     func initView() {
         addFooter()
         noSideGes()
+        
+        let iv = UIImageView()
+        self.view.addSubview(iv)
+        iv.snp.makeConstraints { (mk) in
+            mk.left.top.equalToSuperview().offset(22)
+            mk.width.height.equalTo(80)
+        }
+        iv.kf.setImage(with: URL(string: "http://img5.duitang.com/uploads/item/201411/07/20141107164412_v284V.jpeg"), placeholder: UIImage(color: UIColor.red), options: nil, progressBlock: nil, completionHandler: nil)
     }
 
 }

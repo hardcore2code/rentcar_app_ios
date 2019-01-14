@@ -121,4 +121,31 @@ class BaseViewController: UIViewController {
         UIPasteboard.general.string = str
         showToast(msg: "已复制到剪贴板:\(str)")
     }
+    
+    func getTestCar(_ count: Int) -> [CarInfo] {
+        let imgList = ["https://pic.wenwen.soso.com/p/20151226/20151226114328-1471319236.jpg",
+                       "https://pic.wenwen.soso.com/p/20151226/20151226114326-558979764.jpg",
+                       "https://pic.wenwen.soso.com/p/20151226/20151226114328-903976311.jpg",
+                       "https://pic.wenwen.soso.com/p/20151226/20151226114329-723161299.jpg",
+                       "https://pic.wenwen.soso.com/p/20151226/20151226114549-682156056.jpg"]
+        
+        var carList: [CarInfo] = []
+        for i in 0...count {
+            let car = CarInfo()
+            var il: [String] = []
+            for j in 0...i {
+                il.append(imgList[j % imgList.count])
+            }
+            
+            car.name = "新型新能源车\(i)"
+            car.brand = "恒大\(i)"
+            car.imgList = il
+            car.price = "¥\((i + 1) * 1000)"
+            car.sub = "优惠信息\(i)"
+            
+            carList.append(car)
+        }
+        
+        return carList
+    }
 }
