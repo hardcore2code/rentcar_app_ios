@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  CarListViewController.swift
 //  rentCar
 //
-//  Created by Static on 2019/1/8.
+//  Created by Static on 2019/1/15.
 //  Copyright © 2019 Static1014. All rights reserved.
 //
 
@@ -10,9 +10,9 @@ import UIKit
 import Moya
 import SwiftyJSON
 
-class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-    private let reuseId = "home_id"
-
+class CarListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    private let reuseId = "car_id"
+    
     private var lv: UITableView!
     
     private var itemHeight: CGFloat!
@@ -27,11 +27,9 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         initView()
         requestData()
     }
-
+    
     func initView() {
         itemHeight = (screenWidth - horizontalMargin * 2 - 2) * IMG_HEIGHT / IMG_WIDTH + 120.5
-        
-        addFooter()
         
         lv = UITableView()
         lv.delegate = self
@@ -41,8 +39,9 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         lv.register(CellCar.self, forCellReuseIdentifier: reuseId)
         
         let lvHeader = ListHeader()
+        lvHeader.btnDo.isHidden = true
+        lvHeader.vSection.isHidden = true
         lvHeader.frame = CGRect.init(x: 0, y: 0, width: screenWidth - horizontalMargin * 2, height: lvHeader.getHeight())
-        lvHeader.btnDo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickAdd)))
         lv.tableHeaderView = lvHeader
         
         mjHeader.setRefreshingTarget(self, refreshingAction: #selector(self.headerRefresh))
@@ -56,7 +55,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             mk.left.equalToSuperview().offset(horizontalMargin)
             mk.right.equalToSuperview().offset(-horizontalMargin)
             mk.top.equalToSuperview().offset(22)
-            mk.bottom.equalTo(footer!.snp.top)
+            mk.bottom.equalToSuperview()
         }
         
         initProgressView { (mk) in
@@ -101,10 +100,10 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     //MARK:- 加载数据
     private func updateList() {
-        carList = getTestCar(4)
+        carList = getTestCar(8)
         lv.reloadData()
     }
-
+    
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     }
     
@@ -123,4 +122,3 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 }
-

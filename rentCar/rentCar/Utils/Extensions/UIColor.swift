@@ -55,11 +55,11 @@ extension UIColor {
     
     // 黑、白、灰
     static let BLACK        = withHex(hexString: "#000000")
-    static let BLACK_TRANS  = withHex(hexString: "#000000", alpha: 0.4)
+    static let BLACK_TRANS  = withHex(hexString: "#000000", alpha: 0.6)
     static let WHITE        = withHex(hexString: "#FFFFFF")
     static let GRAY         = gray
-    static let GRAY_BG      = withHex(hexString: "#F9F9F9")
-    static let GRAY_TRANS   = withHex(hexString: "#F9F9F9", alpha: 0.4)
+    static let GRAY_BG      = withHex(hexString: "#C9C9C9")
+    static let GRAY_TRANS   = withHex(hexString: "#F9F9F9", alpha: 0.6)
     static let GRAY_LINE    = withHex(hexString: "#C9C9C9")
     
     // 透明色

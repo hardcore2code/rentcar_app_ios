@@ -15,8 +15,8 @@ extension UILabel {
     ///
     /// - Parameter color: 背景色
     /// - Returns: 按钮
-    func toButton(_ color: UIColor) -> UILabel {
-        self.layer.backgroundColor = color.cgColor
+    func toButton(_ bgColor: UIColor) -> UILabel {
+        self.layer.backgroundColor = bgColor.cgColor
         self.layer.cornerRadius = 8
         self.isUserInteractionEnabled = true
         
@@ -27,6 +27,11 @@ extension UILabel {
         self.layer.backgroundColor = bgColor.cgColor
         self.layer.cornerRadius = radius
         
+        return self
+    }
+    
+    func text(_ text: String) -> UILabel {
+        self.text = text
         return self
     }
 }

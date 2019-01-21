@@ -39,7 +39,7 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
         let imgWidth = screenWidth - horizontalMargin * 2 - 2
         let imgHeight = imgWidth * IMG_HEIGHT / IMG_WIDTH
         
-        iHeight = imgHeight + 80 + 36.5
+        iHeight = imgHeight + 80 + 40.5
         
         let card = UIView().shadow()
         card.backgroundColor = .WHITE
@@ -49,6 +49,38 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
             mk.left.top.equalToSuperview()
             mk.right.equalToSuperview().offset(-2)
             mk.height.equalTo(iHeight)
+        }
+        
+        let v = UIView().corner(4)
+        v.clipsToBounds = true
+        card.addSubview(v)
+        v.snp.makeConstraints { (mk) in
+            mk.left.right.top.equalToSuperview()
+            mk.height.equalTo(imgHeight)
+        }
+        
+        vpImg = FSPagerView()
+        vpImg.delegate = self
+        vpImg.dataSource = self
+        vpImg.register(FSPagerViewCell.self, forCellWithReuseIdentifier: vpId)
+        vpImg.isInfinite = true
+        vpImg.transformer = FSPagerViewTransformer(type: .linear)
+//        vpImg.automaticSlidingInterval = 4
+        v.addSubview(vpImg)
+        vpImg.snp.makeConstraints { (mk) in
+            mk.left.right.top.bottom.equalToSuperview()
+        }
+        
+        vpControl = FSPageControl()
+        vpControl.numberOfPages = car == nil ? 0 : car.imgList.count
+        vpControl.currentPage = 0
+        vpControl.setFillColor(.YELLOW, for: .selected)
+        vpControl.setFillColor(.TRANS, for: .normal)
+        vpControl.setStrokeColor(.WHITE, for: .normal)
+        v.addSubview(vpControl)
+        vpControl.snp.makeConstraints { (mk) in
+            mk.left.right.bottom.equalTo(vpImg)
+            mk.height.equalTo(20)
         }
         
         lbType = label(13, .WHITE, .center).toCorner(.GREEN_LIGHT)
@@ -61,39 +93,14 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
             mk.width.equalTo(getLabelWidth(lbType, 24) + 16)
         }
         
-        vpImg = FSPagerView()
-        vpImg.delegate = self
-        vpImg.dataSource = self
-        vpImg.register(FSPagerViewCell.self, forCellWithReuseIdentifier: vpId)
-        vpImg.isInfinite = true
-        vpImg.transformer = FSPagerViewTransformer(type: .linear)
-        vpImg.automaticSlidingInterval = 4
-        card.addSubview(vpImg)
-        vpImg.snp.makeConstraints { (mk) in
-            mk.left.right.top.equalToSuperview()
-            mk.height.equalTo(imgHeight)
-        }
-        
-        vpControl = FSPageControl()
-        vpControl.numberOfPages = car == nil ? 0 : car.imgList.count
-        vpControl.currentPage = 0
-        vpControl.setFillColor(.YELLOW, for: .selected)
-        vpControl.setFillColor(.TRANS, for: .normal)
-        vpControl.setStrokeColor(.WHITE, for: .normal)
-        card.addSubview(vpControl)
-        vpControl.snp.makeConstraints { (mk) in
-            mk.left.right.bottom.equalTo(vpImg)
-            mk.height.equalTo(20)
-        }
-        
         lbBrand = label(16, .brown, .left)
         lbBrand.text = "品牌名称"
         card.addSubview(lbBrand)
         lbBrand.snp.makeConstraints { (mk) in
-            mk.left.equalToSuperview().offset(padding)
-            mk.right.equalToSuperview().offset(-padding)
-            mk.top.equalTo(vpImg.snp.bottom)
-            mk.height.equalTo(40)
+            mk.left.equalToSuperview().offset(padding * 2)
+            mk.right.equalToSuperview().offset(-padding * 2)
+            mk.top.equalTo(vpImg.snp.bottom).offset(8)
+            mk.height.equalTo(32)
         }
         
         lbName = label(18, .BLACK, .left)
@@ -102,14 +109,14 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
         lbName.snp.makeConstraints { (mk) in
             mk.left.right.equalTo(lbBrand)
             mk.top.equalTo(lbBrand.snp.bottom)
-            mk.height.equalTo(40)
+            mk.height.equalTo(32)
         }
         
         let l1 = line()
         card.addSubview(l1)
         l1.snp.makeConstraints { (mk) in
             mk.left.right.equalToSuperview()
-            mk.top.equalTo(lbName.snp.bottom)
+            mk.top.equalTo(lbName.snp.bottom).offset(8)
             mk.height.equalTo(0.5)
         }
         
@@ -119,7 +126,7 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
         lbPrice.snp.makeConstraints { (mk) in
             mk.left.equalTo(lbBrand)
             mk.top.equalTo(l1.snp.bottom)
-            mk.height.equalTo(36)
+            mk.height.equalTo(40)
             mk.width.equalTo(getLabelWidth(lbPrice, 36) + 12)
         }
         
@@ -149,7 +156,8 @@ class CellCar: UITableViewCell, FSPagerViewDelegate, FSPagerViewDataSource {
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: vpId, at: index)
-        cell.imageView?.kf.setImage(with: URL(string: car.imgList[index]), placeholder: UIImage.init(color: .red), options: nil, progressBlock: nil, completionHandler: nil)
+        cell.imageView?.kf.setImage(with: URL(string: car.imgList[index]), placeholder: UIImage.init(color: UIColor.GRAY_BG), options: nil, progressBlock: nil, completionHandler: nil)
+        
         vpControl.currentPage = index
         return cell
     }

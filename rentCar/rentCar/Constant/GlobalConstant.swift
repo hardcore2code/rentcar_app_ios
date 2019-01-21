@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let HOST_URL = "http://w.hchz315.com/control/sys.asmx"
+
 // 强制输出log
 let FORCE_LOG = true
 

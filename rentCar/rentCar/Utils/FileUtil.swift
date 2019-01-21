@@ -63,4 +63,15 @@ class FileUitl {
     }
     
     
+    /// 保存文件
+    ///
+    /// - Parameters:
+    ///   - data: 文件
+    ///   - to: 保存目录（Home/Documents）
+    ///   - name: 保存文件名
+    static func saveToFile(from data: Data, to: String, withName name: String) {
+        let path = NSHomeDirectory() + "/Documents"
+        createDir(dir: path)
+        FileManager.default.createFile(atPath: path + name, contents: data, attributes: nil)
+    }
 }

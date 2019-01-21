@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D06DC1221F1C61A0088C6DB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D06DC1121F1C61A0088C6DB /* String.swift */; };
 		7D18C92321E4DF360039FA87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C92221E4DF360039FA87 /* AppDelegate.swift */; };
 		7D18C92521E4DF360039FA87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C92421E4DF360039FA87 /* HomeViewController.swift */; };
 		7D18C92D21E4DF390039FA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C92B21E4DF390039FA87 /* LaunchScreen.storyboard */; };
+		7D1A8D9621EDE2D900AAB5F9 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8D9521EDE2D900AAB5F9 /* ProgressView.swift */; };
+		7D1A8D9821EDFA9100AAB5F9 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8D9721EDFA9100AAB5F9 /* CarListViewController.swift */; };
+		7D1A8D9B21EE06DB00AAB5F9 /* BottomInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8D9A21EE06DB00AAB5F9 /* BottomInTransition.swift */; };
+		7D1A8D9E21EE1D4800AAB5F9 /* LVTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8D9D21EE1D4800AAB5F9 /* LVTransitionAnimation.swift */; };
+		7D1A8DA021EE248900AAB5F9 /* BottomOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8D9F21EE248900AAB5F9 /* BottomOutTransition.swift */; };
+		7D1A8DA321EE2E3300AAB5F9 /* LVAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8DA121EE2E3300AAB5F9 /* LVAnimator.swift */; };
+		7D1A8DA421EE2E3300AAB5F9 /* LVTransitioningDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8DA221EE2E3300AAB5F9 /* LVTransitioningDelegateHelper.swift */; };
+		7D1A8DA621EF018400AAB5F9 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8DA521EF018400AAB5F9 /* UIScrollView.swift */; };
+		7D1A8DA821EF178D00AAB5F9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8DA721EF178D00AAB5F9 /* UserInfo.swift */; };
+		7D1A8DAC21EF267800AAB5F9 /* Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1A8DAB21EF267800AAB5F9 /* Safe.swift */; };
 		7D5C0CBA21EC21670052A6E7 /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CB921EC21670052A6E7 /* ListHeader.swift */; };
 		7D5C0CBC21EC3ED20052A6E7 /* CellCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */; };
 		7D5C0CBE21EC5D520052A6E7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */; };
 		7D5C0CC021EC5FD50052A6E7 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */; };
 		7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */; };
+		7D981F9B21F1B0C000EEAF39 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D981F9A21F1B0C000EEAF39 /* EditViewController.swift */; };
+		7D981F9D21F1B22700EEAF39 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D981F9C21F1B22700EEAF39 /* Header.swift */; };
+		7DACCA3921ED7A8700758D5B /* RentCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACCA3821ED7A8700758D5B /* RentCar.swift */; };
 		7DD133DA21E77BD20020E344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD133D921E77BD20020E344 /* Assets.xcassets */; };
 		7DD133DD21E784800020E344 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DC21E784800020E344 /* CommonUI.swift */; };
 		7DD133E421E784DF0020E344 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DF21E784DE0020E344 /* UIImage.swift */; };
@@ -37,16 +51,31 @@
 		262271B64FC2508D8920E342 /* Pods-rentCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-rentCar/Pods-rentCar.release.xcconfig"; sourceTree = "<group>"; };
 		4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rentCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DC198F94D1AD909F0B75AD /* Pods-rentCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rentCar/Pods-rentCar.debug.xcconfig"; sourceTree = "<group>"; };
+		7D06DC1121F1C61A0088C6DB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7D18C91F21E4DF360039FA87 /* rentCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rentCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D18C92221E4DF360039FA87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D18C92421E4DF360039FA87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7D18C92C21E4DF390039FA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D18C92E21E4DF390039FA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1A8D9521EDE2D900AAB5F9 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		7D1A8D9721EDFA9100AAB5F9 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		7D1A8D9A21EE06DB00AAB5F9 /* BottomInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInTransition.swift; sourceTree = "<group>"; };
+		7D1A8D9D21EE1D4800AAB5F9 /* LVTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVTransitionAnimation.swift; sourceTree = "<group>"; };
+		7D1A8D9F21EE248900AAB5F9 /* BottomOutTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOutTransition.swift; sourceTree = "<group>"; };
+		7D1A8DA121EE2E3300AAB5F9 /* LVAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LVAnimator.swift; sourceTree = "<group>"; };
+		7D1A8DA221EE2E3300AAB5F9 /* LVTransitioningDelegateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LVTransitioningDelegateHelper.swift; sourceTree = "<group>"; };
+		7D1A8DA521EF018400AAB5F9 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		7D1A8DA721EF178D00AAB5F9 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		7D1A8DA921EF246B00AAB5F9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		7D1A8DAB21EF267800AAB5F9 /* Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Safe.swift; sourceTree = "<group>"; };
 		7D5C0CB921EC21670052A6E7 /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCar.swift; sourceTree = "<group>"; };
 		7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
 		7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
+		7D981F9A21F1B0C000EEAF39 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		7D981F9C21F1B22700EEAF39 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		7DACCA3821ED7A8700758D5B /* RentCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentCar.swift; sourceTree = "<group>"; };
 		7DD133D921E77BD20020E344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD133DC21E784800020E344 /* CommonUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		7DD133DF21E784DE0020E344 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -110,20 +139,60 @@
 				7DD133F321E786190020E344 /* Controller */,
 				7DD133F421E786350020E344 /* UI */,
 				7DD133F221E786120020E344 /* Model */,
+				7DACCA3721ED78C800758D5B /* API */,
 				7DD133F121E785C40020E344 /* Constant */,
-				7DD133DE21E784A10020E344 /* Extensions */,
 				7DD133DB21E7842C0020E344 /* Utils */,
 				7DD133D921E77BD20020E344 /* Assets.xcassets */,
 				7D18C92221E4DF360039FA87 /* AppDelegate.swift */,
 				7D18C92B21E4DF390039FA87 /* LaunchScreen.storyboard */,
+				7D1A8DA921EF246B00AAB5F9 /* Header.h */,
 				7D18C92E21E4DF390039FA87 /* Info.plist */,
 			);
 			path = rentCar;
 			sourceTree = "<group>";
 		};
+		7D1A8D9921EE069800AAB5F9 /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A8D9C21EE1CFD00AAB5F9 /* Animator */,
+				7D1A8D9A21EE06DB00AAB5F9 /* BottomInTransition.swift */,
+				7D1A8D9F21EE248900AAB5F9 /* BottomOutTransition.swift */,
+			);
+			path = Anim;
+			sourceTree = "<group>";
+		};
+		7D1A8D9C21EE1CFD00AAB5F9 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A8DA121EE2E3300AAB5F9 /* LVAnimator.swift */,
+				7D1A8DA221EE2E3300AAB5F9 /* LVTransitioningDelegateHelper.swift */,
+				7D1A8D9D21EE1D4800AAB5F9 /* LVTransitionAnimation.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		7D1A8DAA21EF259000AAB5F9 /* Safe */ = {
+			isa = PBXGroup;
+			children = (
+				7D1A8DAB21EF267800AAB5F9 /* Safe.swift */,
+			);
+			path = Safe;
+			sourceTree = "<group>";
+		};
+		7DACCA3721ED78C800758D5B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7DACCA3821ED7A8700758D5B /* RentCar.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		7DD133DB21E7842C0020E344 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7D1A8DAA21EF259000AAB5F9 /* Safe */,
+				7DD133DE21E784A10020E344 /* Extensions */,
+				7D1A8D9921EE069800AAB5F9 /* Anim */,
 				7DD133DC21E784800020E344 /* CommonUI.swift */,
 				7DD133EC21E785400020E344 /* CommonUtil.swift */,
 				7DD133E921E785400020E344 /* Conversion.swift */,
@@ -142,6 +211,8 @@
 				7DD133E121E784DE0020E344 /* UIView.swift */,
 				7DD133E221E784DF0020E344 /* UserDefaults.swift */,
 				7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */,
+				7D1A8DA521EF018400AAB5F9 /* UIScrollView.swift */,
+				7D06DC1121F1C61A0088C6DB /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +230,7 @@
 			children = (
 				7D5C0CBF21EC5FD50052A6E7 /* CarInfo.swift */,
 				7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */,
+				7D1A8DA721EF178D00AAB5F9 /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +240,8 @@
 			children = (
 				7D18C92421E4DF360039FA87 /* HomeViewController.swift */,
 				7DD133FC21E870FA0020E344 /* MineViewController.swift */,
+				7D1A8D9721EDFA9100AAB5F9 /* CarListViewController.swift */,
+				7D981F9A21F1B0C000EEAF39 /* EditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,9 +249,11 @@
 		7DD133F421E786350020E344 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7D981F9C21F1B22700EEAF39 /* Header.swift */,
 				7DD133F821E7895A0020E344 /* Footer.swift */,
 				7D5C0CB921EC21670052A6E7 /* ListHeader.swift */,
 				7D5C0CBB21EC3ED20052A6E7 /* CellCar.swift */,
+				7D1A8D9521EDE2D900AAB5F9 /* ProgressView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -210,7 +286,7 @@
 				7D18C91C21E4DF360039FA87 /* Frameworks */,
 				7D18C91D21E4DF360039FA87 /* Resources */,
 				FE335B39311BA461169C2210 /* [CP] Embed Pods Frameworks */,
-				AE5F29EDC4DF363967EFCC7E /* [CP] Copy Pods Resources */,
+				1D3B1AC7FA1F82E4137CD490 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,7 +361,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE5F29EDC4DF363967EFCC7E /* [CP] Copy Pods Resources */ = {
+		1D3B1AC7FA1F82E4137CD490 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,17 +383,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rentCar/Pods-rentCar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,27 +419,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1A8D9B21EE06DB00AAB5F9 /* BottomInTransition.swift in Sources */,
 				7DD133F721E7881A0020E344 /* BaseViewController.swift in Sources */,
 				7D18C92521E4DF360039FA87 /* HomeViewController.swift in Sources */,
 				7D5C0CBA21EC21670052A6E7 /* ListHeader.swift in Sources */,
+				7D1A8DAC21EF267800AAB5F9 /* Safe.swift in Sources */,
 				7DD133E421E784DF0020E344 /* UIImage.swift in Sources */,
+				7DACCA3921ED7A8700758D5B /* RentCar.swift in Sources */,
+				7D1A8D9621EDE2D900AAB5F9 /* ProgressView.swift in Sources */,
+				7D981F9D21F1B22700EEAF39 /* Header.swift in Sources */,
 				7DD133F021E785400020E344 /* CommonUtil.swift in Sources */,
+				7D1A8D9821EDFA9100AAB5F9 /* CarListViewController.swift in Sources */,
+				7D1A8DA021EE248900AAB5F9 /* BottomOutTransition.swift in Sources */,
 				7DD133F921E7895A0020E344 /* Footer.swift in Sources */,
 				7D18C92321E4DF360039FA87 /* AppDelegate.swift in Sources */,
+				7D1A8DA821EF178D00AAB5F9 /* UserInfo.swift in Sources */,
 				7D5C0CBE21EC5D520052A6E7 /* UILabel.swift in Sources */,
 				7DD133FB21E78F310020E344 /* GlobalConstant.swift in Sources */,
 				7D5C0CBC21EC3ED20052A6E7 /* CellCar.swift in Sources */,
+				7D1A8DA621EF018400AAB5F9 /* UIScrollView.swift in Sources */,
 				7DD133EF21E785400020E344 /* FileUtil.swift in Sources */,
 				7DD133ED21E785400020E344 /* Conversion.swift in Sources */,
+				7D981F9B21F1B0C000EEAF39 /* EditViewController.swift in Sources */,
 				7DD133DD21E784800020E344 /* CommonUI.swift in Sources */,
 				7DD133E621E784DF0020E344 /* UIView.swift in Sources */,
 				7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */,
+				7D1A8DA321EE2E3300AAB5F9 /* LVAnimator.swift in Sources */,
 				7DD133FD21E870FA0020E344 /* MineViewController.swift in Sources */,
 				7DD133E821E784DF0020E344 /* UIColor.swift in Sources */,
 				7DD133EE21E785400020E344 /* NSLog.swift in Sources */,
 				7DD133E721E784DF0020E344 /* UserDefaults.swift in Sources */,
 				7D5C0CC021EC5FD50052A6E7 /* CarInfo.swift in Sources */,
+				7D1A8DA421EE2E3300AAB5F9 /* LVTransitioningDelegateHelper.swift in Sources */,
+				7D06DC1221F1C61A0088C6DB /* String.swift in Sources */,
 				7DD133E521E784DF0020E344 /* CALayer.swift in Sources */,
+				7D1A8D9E21EE1D4800AAB5F9 /* LVTransitionAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,14 +595,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8XFJ8K7DT;
 				INFOPLIST_FILE = rentCar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Static1014.rentCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/static/Documents/workspace_ios/rentcar_app_ios/rentCar/rentCar/Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -512,14 +613,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8XFJ8K7DT;
 				INFOPLIST_FILE = rentCar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Static1014.rentCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/static/Documents/workspace_ios/rentcar_app_ios/rentCar/rentCar/Header.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

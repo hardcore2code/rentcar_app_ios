@@ -51,15 +51,14 @@ class Footer: UIView {
             make.width.equalTo(lbHome.snp.width)
         }
         
-        ivAdd = UIImageView(image: UIImage(named: "add"))
+        ivAdd = UIImageView(image: UIImage(named: "add")).corner() as? UIImageView
         ivAdd.isUserInteractionEnabled = true
         ivAdd.contentMode = .center
-        ivAdd.layer.cornerRadius = 8
         ivAdd.layer.backgroundColor = UIColor.YELLOW.cgColor
         self.addSubview(ivAdd)
         ivAdd.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.2)
+            make.width.equalToSuperview().multipliedBy(0.18)
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview().offset(-8)
         }

@@ -44,6 +44,16 @@ func tField(_ placeholder: String) -> UITextField {
     return tField(14, .BLACK, placeholder)
 }
 
+func tFieldMult(_ fontSize: Int = 14, _ textColor: UIColor = .BLACK) -> UITextView {
+    let tv = UITextView()
+    tv.isEditable = true
+    let tPadding = tv.textContainer.lineFragmentPadding
+    tv.textContainerInset = UIEdgeInsets(top: 0, left: -tPadding, bottom: 0, right: -tPadding)
+    tv.font = font(fontSize)
+    tv.textColor = textColor
+    return tv
+}
+
 /// 获取UILabel
 ///
 /// - Parameters:
@@ -96,7 +106,7 @@ func line(_ color: UIColor) -> UIView {
 /// 获取文字宽度
 func getStrWidth(labelStr: String, font: UIFont, height: CGFloat) -> CGFloat {
     let string: NSString = labelStr as NSString
-    let size = CGSize(width: 1000, height: height)
+    let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
     let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
     
     return strSize.width
@@ -117,11 +127,11 @@ func getLabelWidth(_ label: UILabel, _ height: CGFloat) -> CGFloat {
 /// - Returns: 高度
 func getStrHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
     let string: NSString = labelStr as NSString
-    let size = CGSize(width: width, height: 1000)
+    let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
     let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
     
-    NSLog.i("getStrHeight = \(strSize.height)")
-    return strSize.height
+//    NSLog.i("getStrHeight = \(strSize.height + 1)")
+    return strSize.height + 1
 }
 
 func getLabelHeight(_ label: UILabel, _ width: CGFloat) -> CGFloat {
