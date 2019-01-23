@@ -13,6 +13,7 @@ class LoginPhoneViewController: BaseViewController {
     private var tfPhone: UITextField!
     
     override func viewDidLoad() {
+        isEditExisted = true
         super.viewDidLoad()
         
         initView()
@@ -85,6 +86,16 @@ class LoginPhoneViewController: BaseViewController {
             mk.bottom.equalTo(vGo.snp.top).offset(-padding)
         }
         
+        let btnMore = label(20, .WHITE, .center).text("更多方式")
+        btnMore.setOnClickListener(target: self, action: #selector(self.clickMore))
+        self.view.addSubview(btnMore)
+        btnMore.snp.makeConstraints { (mk) in
+            mk.left.equalToSuperview()
+            mk.width.equalTo(getLabelWidth(btnMore, 40) + (horizontalMargin * 2))
+            mk.height.equalTo(40)
+            mk.centerY.equalTo(vGo)
+        }
+        
         setInputLengthLimit(tfs: [(tfPhone, 11)])
     }
     
@@ -100,5 +111,10 @@ class LoginPhoneViewController: BaseViewController {
         let codeVc = LoginCodeViewController()
         codeVc.phone = phone
         self.navigationController?.pushViewController(codeVc, animated: true)
+    }
+    
+    //MARK:- 其他方式登录
+    @objc func clickMore() {
+        self.navigationController?.pushViewController(LoginTypeViewController(), animated: true)
     }
 }

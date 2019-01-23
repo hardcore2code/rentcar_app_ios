@@ -19,6 +19,7 @@ class LoginCodeViewController: BaseViewController {
     var seconds = CODE_TIME_INTERVAL
     
     override func viewDidLoad() {
+        isEditExisted = true
         super.viewDidLoad()
         
         initView()
@@ -188,7 +189,7 @@ class LoginCodeViewController: BaseViewController {
         UserDefaults.setInt(UserDefaults.UK_STEP, 3)
         UserDefaults.setStr(UserDefaults.UK_ADDRESS, "在计算机科学中，内存中每个用于数据存取的基本单位，都被赋予一个唯一的序号，称为地址，也叫做内存地址。内存地址指系统 RAM 中的特定位置，通常以十六进制的数字表示。")
         UserDefaults.setStr(UserDefaults.UK_USE, "用来开啊，运货啊用来开啊，运货啊用来开啊，运货啊用来开啊，运货啊")
-        showToast(msg: "登入完了")
+        showToast(msg: "登入成功")
         
         for vc in (self.navigationController?.viewControllers)! {
             if vc.isKind(of: MineViewController.self) {

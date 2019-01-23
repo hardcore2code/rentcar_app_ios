@@ -47,6 +47,8 @@
 		7DD8AD1B21F6A1150035DE0C /* LoginPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */; };
 		7DD8AD1D21F6F1A20035DE0C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1C21F6F1A20035DE0C /* UITextField.swift */; };
 		7DD8AD1F21F70F070035DE0C /* LoginCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */; };
+		7DD8AD2121F808F00035DE0C /* LoginTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD2021F808F00035DE0C /* LoginTypeViewController.swift */; };
+		7DD8AD2321F80A7A0035DE0C /* LoginAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD2221F80A7A0035DE0C /* LoginAccountViewController.swift */; };
 		FCD0A2CBE73B338788FFF72C /* Pods_rentCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneViewController.swift; sourceTree = "<group>"; };
 		7DD8AD1C21F6F1A20035DE0C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeViewController.swift; sourceTree = "<group>"; };
+		7DD8AD2021F808F00035DE0C /* LoginTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTypeViewController.swift; sourceTree = "<group>"; };
+		7DD8AD2221F80A7A0035DE0C /* LoginAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +283,8 @@
 			children = (
 				7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */,
 				7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */,
+				7DD8AD2021F808F00035DE0C /* LoginTypeViewController.swift */,
+				7DD8AD2221F80A7A0035DE0C /* LoginAccountViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD8AD2321F80A7A0035DE0C /* LoginAccountViewController.swift in Sources */,
 				7D1A8D9B21EE06DB00AAB5F9 /* BottomInTransition.swift in Sources */,
 				7DD133F721E7881A0020E344 /* BaseViewController.swift in Sources */,
 				7D18C92521E4DF360039FA87 /* HomeViewController.swift in Sources */,
@@ -448,6 +455,7 @@
 				7DD133F021E785400020E344 /* CommonUtil.swift in Sources */,
 				7D1A8D9821EDFA9100AAB5F9 /* CarListViewController.swift in Sources */,
 				7D1A8DA021EE248900AAB5F9 /* BottomOutTransition.swift in Sources */,
+				7DD8AD2121F808F00035DE0C /* LoginTypeViewController.swift in Sources */,
 				7DD133F921E7895A0020E344 /* Footer.swift in Sources */,
 				7D18C92321E4DF360039FA87 /* AppDelegate.swift in Sources */,
 				7D1A8DA821EF178D00AAB5F9 /* UserInfo.swift in Sources */,
