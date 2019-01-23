@@ -77,7 +77,7 @@ class CarListViewController: BaseViewController, UITableViewDelegate, UITableVie
             showPb()
         }
         
-        RentCarProvider.request(.call("Pro_WL_MoblieLoad", ["CompanyId": "10001", "InUser": "admin", "inPwd": "123"])) { result in
+        NetUtil.request(.call("getSimpCompanyResult", ["in0": "zyspmc", "in1": "20180101", "in2": "20181231", "in3": "52120116MJ0631127X"])) { result in
             switch result {
             case let .success(response):
                 let data = try? response.mapString()
@@ -120,5 +120,29 @@ class CarListViewController: BaseViewController, UITableViewDelegate, UITableVie
         cell.car = carList[indexPath.row]
         cell.reloadPager()
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        requestDetail(sh: "52120116MJ0631127X", mc: "*生活服务*财会竞赛活动服务费", date1: "20180101", date2: "20181231")
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    func requestDetail(sh: String, mc: String, date1: String, date2: String) {
+        showPb()
+        
+        NetUtil.request(.call("getTotalMonth", ["in0": sh, "in1": mc, "in2": date1, "in3": date2])) { result in
+            switch result {
+            case let .success(response):
+                let data = try? response.mapString()
+                NSLog.i(data!)
+                self.updateList()
+                break
+            case let .failure(error):
+                NSLog.e(error)
+                break
+            }
+            // 恢复视图
+            self.hidePb()
+        }
     }
 }

@@ -13,6 +13,7 @@ import SnapKit
 class BaseViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UITextFieldDelegate {
     
     var animator = LVAnimator()
+    var isGestureEnable = true
 
     var header: Header?
     var footer: Footer?
@@ -25,9 +26,11 @@ class BaseViewController: UIViewController, UIScrollViewDelegate, UITextViewDele
     // 如果已经上移了视图，切换输入框即时不在屏幕下半部，也需要下移复位视图
     private var rootOffsetY: CGFloat = 0
     
+    private var maxLengths: [Int] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animator.registerDelegate(vc: self)
+        animator.registerDelegate(vc: self, gestureEnable: isGestureEnable)
     }
     
     // MARK:- 转场动画
@@ -61,20 +64,25 @@ class BaseViewController: UIViewController, UIScrollViewDelegate, UITextViewDele
         
         // 键盘影响视图
         if isEditExisted {
+            self.view.setOnClickListener(target: self, action: #selector(self.hideKeyboard))
             NotificationCenter.default.addObserver(self, selector: #selector(self.kbFrameChanged(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         }
     }
     
     // MARK:- 添加Header
-    func addHeader() {
+    func addHeader(_ isYellow: Bool = false) {
         header = Header()
+        if isYellow {
+            header?.backgroundColor = .YELLOW
+            header?.ivBack.image = UIImage(named: "arrow_left")
+        }
         self.view.addSubview(header!)
         header!.snp.makeConstraints { (mk) in
             mk.left.right.equalToSuperview()
             mk.height.equalTo(60)
             mk.top.equalToSuperview().offset(22)
         }
-        header!.vBack.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickBack)))
+        header!.vBack.setOnClickListener(target: self, action: #selector(self.clickBack))
     }
     
     /// 点击返回按钮
@@ -91,13 +99,14 @@ class BaseViewController: UIViewController, UIScrollViewDelegate, UITextViewDele
             make.height.equalTo(60)
         }
         if self is MineViewController {
-            footer!.lbHome.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickHome)))
+            
+            footer!.lbHome.setOnClickListener(target: self, action: #selector(self.clickHome))
             footer!.lbHome.textColor = .GRAY
             footer!.lbMine.textColor = .BLACK
         } else if self is HomeViewController {
-            footer!.lbMine.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickMine)))
+            footer!.lbMine.setOnClickListener(target: self, action: #selector(self.clickMine))
         }
-        footer!.ivAdd.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickAdd)))
+        footer!.ivAdd.setOnClickListener(target: self, action: #selector(self.clickAdd))
     }
     
     /// 点击“首页”
@@ -168,6 +177,47 @@ class BaseViewController: UIViewController, UIScrollViewDelegate, UITextViewDele
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         isNeedFix = textField.isInBottomSideOfScreen()
         return true
+    }
+    
+    //MARK:- 限制输入长度
+    /// 限制输入框的长度
+    ///
+    /// - Parameter tfs: (输入框，最大长度)
+    func setInputLengthLimit(tfs: [(UIView, Int)]) {
+        var index = 0
+        for (v, max) in tfs {
+            if v is UITextField {
+                let tf = v as! UITextField
+                tf.delegate = self
+            } else if v is UITextView {
+                let tv = v as! UITextView
+                tv.delegate = self
+            }
+            v.tag = index
+            maxLengths.append(max)
+            
+            index += 1
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else {
+            return true
+        }
+        
+        let length = text.count + string.count - range.length
+        let max = maxLengths[textField.tag]
+        return length <= max
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let txt = textView.text else {
+            return true
+        }
+        
+        let length = txt.count + text.count - range.length
+        let max = maxLengths[textView.tag]
+        return length <= max
     }
     
     // MARK:- 分享

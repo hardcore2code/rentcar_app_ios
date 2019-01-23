@@ -11,6 +11,7 @@ import UIKit
 class Header: UIView {
 
     var vBack: UIView!
+    var ivBack: UIImageView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,14 +27,13 @@ class Header: UIView {
         self.backgroundColor = .WHITE
         
         vBack = UIView()
-        vBack.isUserInteractionEnabled = true
         self.addSubview(vBack)
         vBack.snp.makeConstraints { (mk) in
             mk.left.top.equalToSuperview()
             mk.width.height.equalTo(60)
         }
         
-        let ivBack = UIImageView(image: UIImage(named: "arrow_left")?.tint(color: .YELLOW))
+        ivBack = UIImageView(image: UIImage(named: "arrow_left")?.tint(color: .YELLOW))
         ivBack.contentMode = .scaleAspectFit
         vBack.addSubview(ivBack)
         ivBack.snp.makeConstraints { (mk) in

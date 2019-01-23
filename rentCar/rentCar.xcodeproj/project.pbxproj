@@ -28,7 +28,7 @@
 		7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */; };
 		7D981F9B21F1B0C000EEAF39 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D981F9A21F1B0C000EEAF39 /* EditViewController.swift */; };
 		7D981F9D21F1B22700EEAF39 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D981F9C21F1B22700EEAF39 /* Header.swift */; };
-		7DACCA3921ED7A8700758D5B /* RentCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACCA3821ED7A8700758D5B /* RentCar.swift */; };
+		7DACCA3921ED7A8700758D5B /* NetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACCA3821ED7A8700758D5B /* NetUtils.swift */; };
 		7DD133DA21E77BD20020E344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD133D921E77BD20020E344 /* Assets.xcassets */; };
 		7DD133DD21E784800020E344 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DC21E784800020E344 /* CommonUI.swift */; };
 		7DD133E421E784DF0020E344 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133DF21E784DE0020E344 /* UIImage.swift */; };
@@ -44,6 +44,9 @@
 		7DD133F921E7895A0020E344 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133F821E7895A0020E344 /* Footer.swift */; };
 		7DD133FB21E78F310020E344 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133FA21E78F310020E344 /* GlobalConstant.swift */; };
 		7DD133FD21E870FA0020E344 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD133FC21E870FA0020E344 /* MineViewController.swift */; };
+		7DD8AD1B21F6A1150035DE0C /* LoginPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */; };
+		7DD8AD1D21F6F1A20035DE0C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1C21F6F1A20035DE0C /* UITextField.swift */; };
+		7DD8AD1F21F70F070035DE0C /* LoginCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */; };
 		FCD0A2CBE73B338788FFF72C /* Pods_rentCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3E86BCF9C5142007EA7C76 /* Pods_rentCar.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +78,7 @@
 		7D5C0CC121EC60FA0052A6E7 /* CommentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfo.swift; sourceTree = "<group>"; };
 		7D981F9A21F1B0C000EEAF39 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		7D981F9C21F1B22700EEAF39 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		7DACCA3821ED7A8700758D5B /* RentCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentCar.swift; sourceTree = "<group>"; };
+		7DACCA3821ED7A8700758D5B /* NetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtils.swift; sourceTree = "<group>"; };
 		7DD133D921E77BD20020E344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD133DC21E784800020E344 /* CommonUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		7DD133DF21E784DE0020E344 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -91,6 +94,9 @@
 		7DD133F821E7895A0020E344 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		7DD133FA21E78F310020E344 /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		7DD133FC21E870FA0020E344 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneViewController.swift; sourceTree = "<group>"; };
+		7DD8AD1C21F6F1A20035DE0C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +188,7 @@
 		7DACCA3721ED78C800758D5B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				7DACCA3821ED7A8700758D5B /* RentCar.swift */,
+				7DACCA3821ED7A8700758D5B /* NetUtils.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				7D5C0CBD21EC5D520052A6E7 /* UILabel.swift */,
 				7D1A8DA521EF018400AAB5F9 /* UIScrollView.swift */,
 				7D06DC1121F1C61A0088C6DB /* String.swift */,
+				7DD8AD1C21F6F1A20035DE0C /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 		7DD133F321E786190020E344 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7DD8AD1921F6A0FA0035DE0C /* Login */,
 				7D18C92421E4DF360039FA87 /* HomeViewController.swift */,
 				7DD133FC21E870FA0020E344 /* MineViewController.swift */,
 				7D1A8D9721EDFA9100AAB5F9 /* CarListViewController.swift */,
@@ -264,6 +272,15 @@
 				7DD133F621E7881A0020E344 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7DD8AD1921F6A0FA0035DE0C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7DD8AD1A21F6A1150035DE0C /* LoginPhoneViewController.swift */,
+				7DD8AD1E21F70F070035DE0C /* LoginCodeViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C90CCC7754B0A9CC6AB1E2F0 /* Frameworks */ = {
@@ -425,7 +442,7 @@
 				7D5C0CBA21EC21670052A6E7 /* ListHeader.swift in Sources */,
 				7D1A8DAC21EF267800AAB5F9 /* Safe.swift in Sources */,
 				7DD133E421E784DF0020E344 /* UIImage.swift in Sources */,
-				7DACCA3921ED7A8700758D5B /* RentCar.swift in Sources */,
+				7DACCA3921ED7A8700758D5B /* NetUtils.swift in Sources */,
 				7D1A8D9621EDE2D900AAB5F9 /* ProgressView.swift in Sources */,
 				7D981F9D21F1B22700EEAF39 /* Header.swift in Sources */,
 				7DD133F021E785400020E344 /* CommonUtil.swift in Sources */,
@@ -445,6 +462,7 @@
 				7DD133E621E784DF0020E344 /* UIView.swift in Sources */,
 				7D5C0CC221EC60FA0052A6E7 /* CommentInfo.swift in Sources */,
 				7D1A8DA321EE2E3300AAB5F9 /* LVAnimator.swift in Sources */,
+				7DD8AD1D21F6F1A20035DE0C /* UITextField.swift in Sources */,
 				7DD133FD21E870FA0020E344 /* MineViewController.swift in Sources */,
 				7DD133E821E784DF0020E344 /* UIColor.swift in Sources */,
 				7DD133EE21E785400020E344 /* NSLog.swift in Sources */,
@@ -454,6 +472,8 @@
 				7D06DC1221F1C61A0088C6DB /* String.swift in Sources */,
 				7DD133E521E784DF0020E344 /* CALayer.swift in Sources */,
 				7D1A8D9E21EE1D4800AAB5F9 /* LVTransitionAnimation.swift in Sources */,
+				7DD8AD1B21F6A1150035DE0C /* LoginPhoneViewController.swift in Sources */,
+				7DD8AD1F21F70F070035DE0C /* LoginCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +615,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8XFJ8K7DT;
 				INFOPLIST_FILE = rentCar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Static1014.rentCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/static/Documents/workspace_ios/rentcar_app_ios/rentCar/rentCar/Header.h;
@@ -613,7 +636,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8XFJ8K7DT;
 				INFOPLIST_FILE = rentCar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Static1014.rentCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/static/Documents/workspace_ios/rentcar_app_ios/rentCar/rentCar/Header.h;

@@ -17,6 +17,8 @@ import UIKit
 
 class LVTransitioningDelegateHelper: NSObject, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     
+    var gestureEnable: Bool = true
+    
     weak var vc: UIViewController?
     var progress: CGFloat = 0
     var rate: CGFloat = 1 / 60
@@ -52,7 +54,7 @@ class LVTransitioningDelegateHelper: NSObject, UINavigationControllerDelegate, U
     
     func addGestureForViewController(viewController: UIViewController) {
         vc = viewController
-        if vc != nil, edgePan == nil {
+        if vc != nil, edgePan == nil, gestureEnable {
             edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(panGesture(pan:)))
             edgePan!.edges = .left
             vc?.view.addGestureRecognizer(edgePan!)
@@ -61,6 +63,9 @@ class LVTransitioningDelegateHelper: NSObject, UINavigationControllerDelegate, U
     
     @objc func panGesture(pan: UIPanGestureRecognizer) {
         guard let view = vc?.view else {
+            return
+        }
+        if !gestureEnable {
             return
         }
         progress = pan.translation(in: view).x / view.bounds.width

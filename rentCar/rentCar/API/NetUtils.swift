@@ -1,5 +1,5 @@
 //
-//  NetProvider.swift
+//  NetClient.swift
 //  rentCar
 //
 //  Created by Static on 2019/1/15.
@@ -9,16 +9,16 @@
 import Foundation
 import Moya
 
-let RentCarProvider = MoyaProvider<RentCar>()
+let NetUtil = MoyaProvider<NetClient>()
 
-public enum RentCar {
+public enum NetClient {
     case call(_ funcName: String, _ params: [String: String])
 }
 
-extension RentCar: TargetType {
+extension NetClient: TargetType {
 
     public var baseURL: URL {
-        return URL(string: HOST_URL)!
+        return URL(string: "http://192.168.101.207:8080/fpgl/services/fpgl")!
     }
 
     public var path: String {
@@ -54,8 +54,9 @@ extension RentCar: TargetType {
     private func getXml(funcName: String, params: [String: String]) -> String {
         var xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body>"
         xml.append(contentsOf: "<\(funcName) xmlns=\"http://tempuri.org/\">")
-        for param in params {
-            xml.append(contentsOf: "<\(param.key)>\(param.value)</\(param.key)>")
+        let keys = params.keys.sorted()
+        for key in keys {
+            xml.append(contentsOf: "<\(key)>\(params[key] ?? "")</\(key)>")
         }
         xml.append(contentsOf: "</\(funcName)></soap:Body></soap:Envelope>")
 

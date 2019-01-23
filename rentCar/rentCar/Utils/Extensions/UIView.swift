@@ -85,4 +85,14 @@ extension UIView {
     func isInBottomSideOfScreen() -> Bool {
         return rectToWindow().origin.y > screenHeight / 2
     }
+    
+    /// 添加点击事件
+    ///
+    /// - Parameters:
+    ///   - target: 相应视图
+    ///   - selector: 点击事件
+    func setOnClickListener(target: Any?, action: Selector?) {
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: target, action: action))
+    }
 }

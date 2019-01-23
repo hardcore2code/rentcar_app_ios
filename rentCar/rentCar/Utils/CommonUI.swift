@@ -107,7 +107,7 @@ func line(_ color: UIColor) -> UIView {
 func getStrWidth(labelStr: String, font: UIFont, height: CGFloat) -> CGFloat {
     let string: NSString = labelStr as NSString
     let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
-    let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
+    let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
     
     return strSize.width
 }
@@ -128,7 +128,7 @@ func getLabelWidth(_ label: UILabel, _ height: CGFloat) -> CGFloat {
 func getStrHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
     let string: NSString = labelStr as NSString
     let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-    let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
+    let strSize = string.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
     
 //    NSLog.i("getStrHeight = \(strSize.height + 1)")
     return strSize.height + 1

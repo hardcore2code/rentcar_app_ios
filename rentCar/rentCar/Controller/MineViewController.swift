@@ -11,7 +11,6 @@ import Kingfisher
 import SnapKit
 
 class MineViewController: BaseViewController {
-    
     private var funcs       = ["我的账户", "我的订单", "我的卡券", "实名认证", "用车手册", "热线电话", "邀请好友", "关于我们", "设置密码", "修改手机号"]
     private var needLogins  = [true, true, true, true, false, false, true, false, true, true]
     private var icons       = ["ic_account", "ic_order", "ic_coupon", "ic_verify", "ic_readme", "ic_line", "ic_friends", "ic_about_us", "ic_set_pwd", "ic_set_phone"]
@@ -41,10 +40,8 @@ class MineViewController: BaseViewController {
     private let funcHeight: CGFloat = 80
     
     override func viewDidLoad() {
+        isGestureEnable = false
         super.viewDidLoad()
-        //TODO: 删除
-        UserDefaults.setStr(UserDefaults.UK_PHONE, "")
-        UserDefaults.setStr(UserDefaults.UK_AVATAR, "")
         
         initView()
         loadData()
@@ -52,7 +49,6 @@ class MineViewController: BaseViewController {
     
     func initView() {
         addFooter()
-        noSideGes()
         
         contentWidth = screenWidth - horizontalMargin * 2
         
@@ -70,8 +66,7 @@ class MineViewController: BaseViewController {
         
         let avatarView = UIView()
         avatarView.tag = 90
-        avatarView.isUserInteractionEnabled = true
-        avatarView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickFunc(sender:))))
+        avatarView.setOnClickListener(target: self, action: #selector(self.clickFunc(sender:)))
         contentView.addSubview(avatarView)
         avatarView.snp.makeConstraints { (mk) in
             mk.left.right.equalToSuperview()
@@ -115,8 +110,7 @@ class MineViewController: BaseViewController {
         
         stepView = UIView()
         stepView.tag = 91
-        stepView.isUserInteractionEnabled = true
-        stepView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickFunc(sender:))))
+        stepView.setOnClickListener(target: self, action: #selector(self.clickFunc(sender:)))
         stepView.clipsToBounds = true
         contentView.addSubview(stepView)
         
@@ -214,7 +208,7 @@ class MineViewController: BaseViewController {
         scrollView.contentSize = CGSize(width: contentWidth, height: contentHeight)
     }
     
-    private func loadData() {
+    func loadData() {
         user = UserDefaults.getUserInfo()
         isLogin = (user.phone?.count ?? 0) > 1
         
@@ -258,7 +252,6 @@ class MineViewController: BaseViewController {
     //MARK:- 功能菜单
     private func getFuncView(tag: Int, topView: UIView, funcName: String, icon: String) -> UIView {
         let funcView = UIView()
-        funcView.isUserInteractionEnabled = true
         funcView.tag = tag
         
         let iv = UIImageView(image: UIImage(named: "arrow_right")?.tint(color: .GRAY_LINE))
@@ -292,21 +285,13 @@ class MineViewController: BaseViewController {
             mk.top.equalTo(topView.snp.bottom)
         }
         
-        funcView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickFunc(sender:))))
+        funcView.setOnClickListener(target: self, action: #selector(self.clickFunc(sender:)))
         
         return funcView
     }
     
     func goLogin() {
-        //TODO: 登入
-        UserDefaults.setStr(UserDefaults.UK_PHONE, "12345678912")
-        UserDefaults.setStr(UserDefaults.UK_AVATAR, "https://avatars0.githubusercontent.com/u/6638453?s=460&v=4")
-        UserDefaults.setInt(UserDefaults.UK_STEP, 2)
-        UserDefaults.setStr(UserDefaults.UK_ADDRESS, "在计算机科学中，内存中每个用于数据存取的基本单位，都被赋予一个唯一的序号，称为地址，也叫做内存地址。内存地址指系统 RAM 中的特定位置，通常以十六进制的数字表示。")
-        UserDefaults.setStr(UserDefaults.UK_USE, "用来开啊，运货啊用来开啊，运货啊用来开啊，运货啊用来开啊，运货啊")
-        showToast(msg: "登入完了")
-        
-        loadData()
+        self.navigationController?.pushViewController(LoginPhoneViewController(), animated: true)
     }
     
     //MARK:- 功能菜单点击事件
@@ -339,6 +324,10 @@ class MineViewController: BaseViewController {
             break
         case 91:
             // 点击步骤
+            //TODO: 退出登录
+            UserDefaults.setStr(UserDefaults.UK_PHONE, "")
+            UserDefaults.setStr(UserDefaults.UK_AVATAR, "")
+            loadData()
             break
         case 0:
             // 我的账户

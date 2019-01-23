@@ -29,7 +29,8 @@ class LVAnimator: NSObject {
         helper.animationBlock = animationAction
     }
     
-    func registerDelegate(vc: UIViewController) {
+    func registerDelegate(vc: UIViewController, gestureEnable: Bool = true) {
+        helper.gestureEnable = gestureEnable
         vc.transitioningDelegate = helper
         vc.navigationController?.delegate = helper
     }

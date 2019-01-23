@@ -17,3 +17,6 @@ let FORCE_LOG = true
 // 图片长宽比例
 let IMG_WIDTH: CGFloat = 16
 let IMG_HEIGHT: CGFloat = 9
+
+// 倒计时
+let CODE_TIME_INTERVAL = 120

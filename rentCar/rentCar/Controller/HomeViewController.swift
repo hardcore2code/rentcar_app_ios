@@ -42,7 +42,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let lvHeader = ListHeader()
         lvHeader.frame = CGRect.init(x: 0, y: 0, width: screenWidth - horizontalMargin * 2, height: lvHeader.getHeight())
-        lvHeader.btnDo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickAdd)))
+        lvHeader.btnDo.setOnClickListener(target: self, action: #selector(self.clickAdd))
         lv.tableHeaderView = lvHeader
         
         mjHeader.setRefreshingTarget(self, refreshingAction: #selector(self.headerRefresh))
@@ -78,7 +78,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             showPb()
         }
         
-        RentCarProvider.request(.call("Pro_WL_MoblieLoad", ["CompanyId": "10001", "InUser": "admin", "inPwd": "123"])) { result in
+        NetUtil.request(.call("Pro_WL_MoblieLoad", ["CompanyId": "10001", "InUser": "admin", "inPwd": "123"])) { result in
             switch result {
             case let .success(response):
                 let data = try? response.mapString()

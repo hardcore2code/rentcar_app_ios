@@ -34,7 +34,6 @@ class Footer: UIView {
         }
         
         lbHome = label(22, .BLACK, .center)
-        lbHome.isUserInteractionEnabled = true
         lbHome.text = "首页"
         self.addSubview(lbHome)
         lbHome.snp.makeConstraints { (make) in
@@ -43,7 +42,6 @@ class Footer: UIView {
         }
         
         lbMine = label(22, .GRAY, .center)
-        lbMine.isUserInteractionEnabled = true
         lbMine.text = "我的"
         self.addSubview(lbMine)
         lbMine.snp.makeConstraints { (make) in
@@ -52,7 +50,6 @@ class Footer: UIView {
         }
         
         ivAdd = UIImageView(image: UIImage(named: "add")).corner() as? UIImageView
-        ivAdd.isUserInteractionEnabled = true
         ivAdd.contentMode = .center
         ivAdd.layer.backgroundColor = UIColor.YELLOW.cgColor
         self.addSubview(ivAdd)

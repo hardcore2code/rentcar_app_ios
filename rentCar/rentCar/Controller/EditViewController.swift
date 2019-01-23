@@ -44,12 +44,10 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
     func initView() {
         addHeader()
         
-        self.view.isUserInteractionEnabled = true
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
         contentWidth = screenWidth - horizontalMargin * 2
         
         let btnSubmit = label(24, .WHITE, .center).toButton(.YELLOW)
-        btnSubmit.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickSubmit)))
+        btnSubmit.setOnClickListener(target: self, action: #selector(self.clickSubmit))
         btnSubmit.text = "保存"
         self.view.addSubview(btnSubmit)
         btnSubmit.snp.makeConstraints { (mk) in
@@ -88,8 +86,7 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
         }
         
         let avatarView = UIView()
-        avatarView.isUserInteractionEnabled = true
-        avatarView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.clickAvatar)))
+        avatarView.setOnClickListener(target: self, action: #selector(self.clickAvatar))
         contentView.addSubview(avatarView)
         avatarView.snp.makeConstraints { (mk) in
             mk.left.right.equalToSuperview()
@@ -151,7 +148,7 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
         self.tfEmName = tfEmName
         let (vEmPhone, tfEmPhone) = addEditView(topView: vEmName, lbName: "紧急联系人电话", placeholder: "输入联系电话")
         self.tfEmPhone = tfEmPhone
-        self.tfEmPhone.keyboardType = .phonePad
+        self.tfEmPhone.keyboardType = .numberPad
         let (vIncome, tfIncome) = addEditView(topView: vEmPhone, lbName: "收入", placeholder: "输入收入")
         self.tfIncome = tfIncome
         self.tfIncome.keyboardType = .decimalPad
@@ -199,10 +196,25 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
                       "income": income,
                       "infoFrom": infoFrom,
                       "use": use]
-        RentCarProvider.request(.call("Pro_WL_MoblieLoad", params)) { (result) in
+        NetUtil.request(.call("Pro_WL_MoblieLoad", params)) { (result) in
             switch result {
             case let .success(response):
                 NSLog.i(try? response.mapString())
+                
+                self.user.avatar = self.user.avatar
+                self.user.name = name
+                self.user.email = email
+                self.user.address = address
+                self.user.emergencyName = emName
+                self.user.emergencyPhone = emPhone
+                self.user.income = income
+                self.user.infoFrom = infoFrom
+                self.user.use = use
+                
+                // 保存
+                self.showToast(msg: "保存成功")
+                UserDefaults.setUserInfo(self.user)
+                
                 break
             case let .failure(error):
                 NSLog.e(error)
@@ -237,6 +249,15 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
         calculateTextViewHeight(tfAddress)
         calculateTextViewHeight(tfInfoFrom)
         calculateTextViewHeight(tfUse)
+        
+        setInputLengthLimit(tfs: [(tfName, 16),
+                               (tfEmail, 60),
+                               (tfAddress, 100),
+                               (tfEmName, 16),
+                               (tfEmPhone, 11),
+                               (tfIncome, 20),
+                               (tfInfoFrom, 100),
+                               (tfUse, 100)])
     }
     
     //MARK:- 更换头像
@@ -279,7 +300,7 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
             mk.height.equalTo(30)
         }
         
-        let tf = tField(20, .BLACK, placeholder)
+        let tf = tField(19, .BLACK, placeholder)
         tf.delegate = self
         tf.clearButtonMode = .always
         ev.addSubview(tf)
@@ -317,7 +338,7 @@ class EditViewController: BaseViewController, UIImagePickerControllerDelegate, U
             mk.height.equalTo(30)
         }
         
-        let tf = tFieldMult(20, .BLACK)
+        let tf = tFieldMult(19, .BLACK)
         tf.placeholder = placeholder
         tf.tag = tag
         tf.isScrollEnabled = false
